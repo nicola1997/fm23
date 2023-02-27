@@ -27,10 +27,9 @@ public class Main {
                 }
                 j++;
             }
-            //System.out.println(i);
             i++;
         }
-
+        System.out.println(c.toString());
 
         c.sort();
 

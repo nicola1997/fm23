@@ -72,9 +72,8 @@ public class Campionato {
         a.setPartite(a.getPartite()+1);
         b.setPartite(b.getPartite()+1);
 
-        if(a.getNome()=="Inter"||b.getNome()=="Inter"){
             System.out.println(a.getNome()+"-"+b.getNome()+" "+golA+"-"+golB);
-        }
+
     }
 
     public static int getAnno() {
