@@ -4,27 +4,27 @@ import java.util.ArrayList;
 
 public class Squadra {
     private String nome;
-    private ArrayList<Calciatore> giocatori;
+    private ArrayList<Calciatore> calciatori;
 
     public Squadra(String nome) {
         this.nome = nome;
-        this.giocatori = new ArrayList<>();
+        this.calciatori = new ArrayList<>();
     }
 
     public void aggiungiGiocatore(Calciatore giocatore) {
-        giocatori.add(giocatore);
+        calciatori.add(giocatore);
     }
 
     public void rimuoviGiocatore(Calciatore giocatore) {
-        giocatori.remove(giocatore);
+        calciatori.remove(giocatore);
     }
 
     public ArrayList<Calciatore> getGiocatori() {
-        return giocatori;
+        return calciatori;
     }
 
     public void setGiocatori(ArrayList<Calciatore> giocatori) {
-        this.giocatori = giocatori;
+        this.calciatori = giocatori;
     }
 
     public String getNome() {
