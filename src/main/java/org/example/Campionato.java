@@ -7,6 +7,15 @@ import java.util.Random;
 public class Campionato {
     static int anno;
     private final String nome;
+
+    public ArrayList<Squadra> getSquadre() {
+        return squadre;
+    }
+
+    public void setSquadre(ArrayList<Squadra> squadre) {
+        this.squadre = squadre;
+    }
+
     ArrayList<Squadra> squadre;
     Random r ;
 
