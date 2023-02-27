@@ -2,6 +2,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -29,9 +30,19 @@ public class Main {
             }
             i++;
         }
-        System.out.println(c.toString());
 
-        c.sort();
+        Scanner s=new Scanner(System.in);
+
+        while(true){
+            System.out.println("a: classifica\nb: database");
+            String input=s.nextLine();
+            switch (input){
+                case("a"):         c.sort(); break;
+                case("b"):          System.out.println(c.toString()); break;
+
+            }
+        }
+
 
 
     }
