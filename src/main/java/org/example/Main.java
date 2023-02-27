@@ -1,5 +1,4 @@
 package org.example;
-
 import java.util.ArrayList;
 
 public class Main {
@@ -16,6 +15,7 @@ public class Main {
         Campionato c= new Campionato("serieA",squadreA);
         System.out.println(c);
 
+        
 
     }
 }

@@ -17,8 +17,7 @@ public class Calciatore {
     @Override
     public String toString() {
         return "\n"+"Calciatore{" +
-                "r=" + r +
-                ", nome='" + nome + '\'' +
+                " nome='" + nome + '\'' +
                 ", cognome='" + cognome + '\'' +
                 ", eta=" + eta +
                 ", presenze=" + presenze +

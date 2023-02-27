@@ -6,9 +6,11 @@ public class Campionato {
     private final String nome;
     ArrayList<Squadra> squadre;
 
+
     public Campionato(String nome, ArrayList<Squadra> squadre) {
         this.nome = nome;
         this.squadre = squadre;
+        this.anno=2023;
     }
 
     public static int getAnno() {
@@ -30,12 +32,11 @@ public class Campionato {
     public void setCampionato(ArrayList<Squadra> campionato) {
         this.squadre = campionato;
     }
-
     @Override
     public String toString() {
         return "Campionato{" +
                 "nome='" + nome + '\'' +
-                ", campionato=" + squadre +
+                ", squadre=" + squadre +
                 '}';
     }
 }
