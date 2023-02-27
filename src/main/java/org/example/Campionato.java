@@ -19,7 +19,7 @@ public class Campionato {
     }
     void sort() {
         Collections.sort(squadre,new ConfrontaPerPunti());
-        for(int i=0;i<squadre.size();i++){
+        for(int i=squadre.size()-1;i>=0;i--){
             System.out.println(squadre.get(i).getNome()+" "+squadre.get(i).getPunti()+"");
 
         }
