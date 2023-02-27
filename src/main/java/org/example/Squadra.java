@@ -11,6 +11,14 @@ public class Squadra {
         this.calciatori = new ArrayList<>();
     }
 
+    @Override
+    public String toString() {
+        return "Squadra{" +
+                "nome='" + nome + '\'' +
+                ", calciatori=" + calciatori +
+                '}';
+    }
+
     public void aggiungiGiocatore(Calciatore giocatore) {
         calciatori.add(giocatore);
     }

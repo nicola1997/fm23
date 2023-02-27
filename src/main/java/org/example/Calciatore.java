@@ -1,23 +1,29 @@
 package org.example;
 
-public class Calciatore implements Persona{
-    private String nome;
-    private String cognome;
+import java.util.Random;
+
+public class Calciatore {
+    static final String nomi[]={"Nicola","Vito","Andrea","Aldo","Luca"};
+    static final String cognomi[]={"Neri","Biasco","Guida","Verdi","Rossi"};
+    Random r;
+    private final String nome;
+    private final String cognome;
     private int eta;
     private int presenze;
     private int gol;
 
-    public Calciatore(String nome, String cognome, int eta, int presenze, int gol) {
-        this.nome = nome;
-        this.cognome = cognome;
-        this.eta = eta;
-        this.presenze = presenze;
-        this.gol = gol;
+    public Calciatore() {
+        r= new Random();
+        this.nome = nomi[r.nextInt(5)];
+        this.cognome = cognomi[r.nextInt(5)];
+        this.eta = r.nextInt(15,39);
+        this.presenze = 0;
+        this.gol = 0;
     }
 
     @Override
     public String toString() {
-        return "Calciatore{" +
+        return "\n"+"Calciatore{" +
                 "nome='" + nome + '\'' +
                 ", cognome='" + cognome + '\'' +
                 ", eta=" + eta +
@@ -43,32 +49,18 @@ public class Calciatore implements Persona{
     }
 
 
-    @Override
     public String getNome() {
         return this.nome;
     }
 
-    @Override
-    public void setNome(String nome) {
-        this.nome=nome;
-    }
-
-    @Override
     public String getCognome() {
         return this.cognome;
     }
 
-    @Override
-    public void setCognome(String cognome) {
-        this.cognome=cognome;
-    }
-
-    @Override
     public int getEta() {
         return this.eta;
     }
 
-    @Override
     public void setEta(int eta) {
         this.eta=eta;
     }
