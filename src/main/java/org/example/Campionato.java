@@ -4,11 +4,11 @@ import java.util.ArrayList;
 public class Campionato {
     static int anno;
     private final String nome;
-    ArrayList<Squadra> campionato;
+    ArrayList<Squadra> squadre;
 
-    public Campionato(String nome, ArrayList<Squadra> campionato) {
+    public Campionato(String nome, ArrayList<Squadra> squadre) {
         this.nome = nome;
-        this.campionato = campionato;
+        this.squadre = squadre;
     }
 
     public static int getAnno() {
@@ -24,18 +24,18 @@ public class Campionato {
     }
 
     public ArrayList<Squadra> getCampionato() {
-        return campionato;
+        return squadre;
     }
 
     public void setCampionato(ArrayList<Squadra> campionato) {
-        this.campionato = campionato;
+        this.squadre = campionato;
     }
 
     @Override
     public String toString() {
         return "Campionato{" +
                 "nome='" + nome + '\'' +
-                ", campionato=" + campionato +
+                ", campionato=" + squadre +
                 '}';
     }
 }

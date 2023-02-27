@@ -11,6 +11,30 @@ public class Calciatore {
     private int eta;
     private int presenze;
     private int gol;
+    private int abilita;
+    private String squadra;
+
+    @Override
+    public String toString() {
+        return "\n"+"Calciatore{" +
+                "r=" + r +
+                ", nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", eta=" + eta +
+                ", presenze=" + presenze +
+                ", gol=" + gol +
+                ", abilita=" + abilita +
+                ", squadra='" + squadra + '\'' +
+                '}';
+    }
+
+    public String getSquadra() {
+        return squadra;
+    }
+
+    public void setSquadra(String squadra) {
+        this.squadra = squadra;
+    }
 
     public Calciatore() {
         r= new Random();
@@ -19,17 +43,15 @@ public class Calciatore {
         this.eta = r.nextInt(15,39);
         this.presenze = 0;
         this.gol = 0;
+        this.abilita=r.nextInt(50,99);
     }
 
-    @Override
-    public String toString() {
-        return "\n"+"Calciatore{" +
-                "nome='" + nome + '\'' +
-                ", cognome='" + cognome + '\'' +
-                ", eta=" + eta +
-                ", presenze=" + presenze +
-                ", gol=" + gol +
-                '}';
+    public int getAbilita() {
+        return abilita;
+    }
+
+    public void setAbilita(int abilita) {
+        this.abilita = abilita;
     }
 
     public int getPresenze() {

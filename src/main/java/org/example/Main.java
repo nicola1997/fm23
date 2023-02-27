@@ -1,20 +1,21 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-
-        Squadra s= new Squadra("Inter");
-
-        Calciatore c0=new Calciatore();
-        Calciatore c1=new Calciatore();
-        Calciatore c2=new Calciatore();
+        String[] nomiSquadre={"Juventus","Inter","Milan","Napoli","Atalanta","Lazio","Roma","Torino","Bologna","Verona",
+        "Lecce","Sampdoria","Monza","Cremonese","Fiorentina","Spezia","Udinese","Empoli","Sassuolo","Salerninata"};
 
 
-        s.aggiungiGiocatore(c0);
-        s.aggiungiGiocatore(c1);
-        s.aggiungiGiocatore(c2);
+        ArrayList <Squadra> squadreA= new ArrayList<>();
 
-        System.out.println(s);
+        for (int i=0;i<20;i++){
+            squadreA.add(new Squadra(nomiSquadre[i]));
+        }
+        Campionato c= new Campionato("serieA",squadreA);
+        System.out.println(c);
+
 
     }
 }

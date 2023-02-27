@@ -8,7 +8,11 @@ public class Squadra {
 
     public Squadra(String nome) {
         this.nome = nome;
-        this.calciatori = new ArrayList<>();
+        this.calciatori = new ArrayList<Calciatore>();
+        for(int i=0;i<20;i++){
+            calciatori.add(new Calciatore());
+            calciatori.get(i).setSquadra(getNome());
+        }
     }
 
 
