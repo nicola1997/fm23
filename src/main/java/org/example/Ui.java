@@ -4,12 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
+
 public class Ui extends JFrame {
     private JButton button1,button2,button3,button4;
     private JPanel panel;
     private JTextArea text5;
+    private Random r;
 
     Ui(Campionato c) {
+        r=new Random();
         setSize(500,500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
@@ -18,7 +22,7 @@ public class Ui extends JFrame {
         getContentPane().add(panel);
 
         JButton button1 = new JButton("classifica");
-        JButton button2 = new JButton("button");
+        JButton button2 = new JButton("squadre");
         JButton button3 = new JButton("simula");
         JButton button4 = new JButton("Next");
         JTextArea text5 = new JTextArea("Benvenuto. Sei pronto per una nuova sfida? \nVinci la stagione "+c.anno+" con la tua squadra.");
@@ -28,6 +32,13 @@ public class Ui extends JFrame {
         panel.add(button3,BorderLayout.SOUTH);
         panel.add(button4,BorderLayout.WEST);
         panel.add(text5,BorderLayout.CENTER);
+
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text5.setText(c.getSquadre().get(r.nextInt(19)).toString());
+            }
+        });
         button4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
