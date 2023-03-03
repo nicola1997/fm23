@@ -23,8 +23,8 @@ public class Ui extends JFrame {
         getContentPane().add(panel);
 
         JButton button1 = new JButton("classifica");
-        JButton button2 = new JButton("button2");
-        JButton button3 = new JButton("button3");
+        JButton button2 = new JButton("azzera");
+        JButton button3 = new JButton("simula");
         JButton button4 = new JButton("button4");
         JTextArea text5 = new JTextArea("text5");
 
@@ -33,8 +33,31 @@ public class Ui extends JFrame {
         panel.add(button3,BorderLayout.SOUTH);
         panel.add(button4,BorderLayout.WEST);
         panel.add(text5,BorderLayout.CENTER);
-
-
+button3.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        int i=0;
+        int j=0;
+        while(i<c.squadre.size()){
+            j=0;
+            while(j<c.squadre.size()){
+                if(j!=i){
+                    c.match(c.getCampionato().get(i),c.getCampionato().get(j));
+                }
+                j++;
+            }
+            i++;
+        }
+    }
+});
+button2.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        for(int i=0;i<c.getCampionato().size();i++){
+            c.getCampionato().get(i).azzera();
+        }
+    }
+});
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

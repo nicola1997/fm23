@@ -1,5 +1,6 @@
 package org.example;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 
 public class Squadra {
@@ -22,6 +23,13 @@ public class Squadra {
             calciatori.get(i).setSquadra(getNome());
         }
         nGiocatori=calciatori.size();      //da vedere
+    }
+    public void azzera(){
+        punti=0;
+        vittorie=0;
+        pareggi=0;
+        sconfitte=0;
+        partite=0;
     }
 
     public int getPartite() {

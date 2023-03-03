@@ -16,19 +16,6 @@ public class Main {
         Ui ui=new Ui(c);
 
 
-        int i=0;
-        int j=0;
-        while(i<c.squadre.size()){
-            j=0;
-            while(j<c.squadre.size()){
-                if(j!=i){
-                    c.match(c.getCampionato().get(i),c.getCampionato().get(j));
-                }
-                j++;
-            }
-            i++;
-        }
-
         Scanner s=new Scanner(System.in);
 
         while(true){
@@ -39,12 +26,12 @@ public class Main {
                 case("2"):          System.out.println(c.toString()); break;
                 case("3"):          System.out.println("Inserisci una squadra:");
                                     input=s.nextLine();
-                                    for( i=0;i<c.getSquadre().size();i++ ){
-                                        if(Objects.equals(c.getSquadre().get(i).getNome(), input)){
-                                            System.out.println(c.getSquadre().get(i));
-                                        }
-                                    }
-                                    break;
+                                  // for( i=0;i<c.getSquadre().size();i++ ){
+                                  //     if(Objects.equals(c.getSquadre().get(i).getNome(), input)){
+                                  //         System.out.println(c.getSquadre().get(i));
+                                  //     }
+                                  // }
+                                  //  break;
             }
         }
 
