@@ -13,6 +13,8 @@ public class Calciatore {
     private int gol;
     private int abilita;
     private String squadra;
+    private final int incremento;
+    int prezzo;
 
     @Override
     public String toString() {
@@ -43,6 +45,32 @@ public class Calciatore {
         this.presenze = 0;
         this.gol = 0;
         this.abilita=r.nextInt(50,99);
+        this.incremento=r.nextInt(1,3);
+        this.prezzo=1000*abilita-eta*500;
+
+    }
+
+    public void invecchia(){
+        setEta(getEta()+1);
+        if(eta<25){
+            setAbilita(getAbilita()+getIncremento());
+        }
+        else if(eta>30){
+            setAbilita(getAbilita()-1);
+        }
+        setPrezzo(1000*abilita-eta*500);
+        }
+
+    public int getIncremento() {
+        return incremento;
+    }
+
+    public int getPrezzo() {
+        return prezzo;
+    }
+
+    public void setPrezzo(int prezzo) {
+        this.prezzo = prezzo;
     }
 
     public int getAbilita() {

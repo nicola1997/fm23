@@ -23,41 +23,54 @@ public class Ui extends JFrame {
         getContentPane().add(panel);
 
         JButton button1 = new JButton("classifica");
-        JButton button2 = new JButton("azzera");
+        JButton button2 = new JButton("button");
         JButton button3 = new JButton("simula");
-        JButton button4 = new JButton("button4");
-        JTextArea text5 = new JTextArea("text5");
+        JButton button4 = new JButton("Next");
+        JTextArea text5 = new JTextArea("Benvenuto. Sei pronto per una nuova sfida? \nVinci la stagione "+c.anno+" con la tua squadra.");
 
         panel.add(button1,BorderLayout.EAST);
         panel.add(button2,BorderLayout.NORTH);
         panel.add(button3,BorderLayout.SOUTH);
         panel.add(button4,BorderLayout.WEST);
         panel.add(text5,BorderLayout.CENTER);
+        button4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(c.getCampionato().get(0).getPartite()==0){
+                    text5.setText("Il campionato è appena iniziato. \nTermina il campionato "+c.anno+" per iniziare il prossimo.");
+                }
+                else {
+                    c.stagioneSuccessiva();
+                    text5.setText("Nuova stagione" + c.anno + " iniziata! Buona fortuna");
+                }
+            }
+        });
 button3.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
-        int i=0;
-        int j=0;
-        while(i<c.squadre.size()){
-            j=0;
-            while(j<c.squadre.size()){
-                if(j!=i){
-                    c.match(c.getCampionato().get(i),c.getCampionato().get(j));
+        if (c.getCampionato().get(0).getPartite() !=38 ) {
+            int i = 0;
+            int j = 0;
+            while (i < c.squadre.size()) {
+                j = 0;
+                while (j < c.squadre.size()) {
+                    if (j != i) {
+                        c.match(c.getCampionato().get(i), c.getCampionato().get(j));
+                    }
+                    j++;
                 }
-                j++;
+                i++;
             }
-            i++;
+            text5.setText("Il campionato si è concluso.\n Controlla la classifica.\n"+c.getCampionato().get(0).getNome()+" e' campione d'Italia");
+
+        }
+        else {
+            text5.setText("Inizia una nuova stagione.");
         }
     }
+
 });
-button2.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        for(int i=0;i<c.getCampionato().size();i++){
-            c.getCampionato().get(i).azzera();
-        }
-    }
-});
+
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -91,9 +104,7 @@ button2.addActionListener(new ActionListener() {
         setVisible(true);
     }
 
-    void text(String s){
-        button1.setText(s);
-    }
+
 }
 
 

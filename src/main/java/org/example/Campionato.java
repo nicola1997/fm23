@@ -26,6 +26,13 @@ public class Campionato {
         this.anno=2023;
         r= new Random();
     }
+    void stagioneSuccessiva(){
+        setAnno(getAnno()+1);
+        for(int i=0;i<getCampionato().size();i++){
+            getCampionato().get(i).azzera();
+            getCampionato().get(i).getCalciatore(i).invecchia();
+        }
+    }
     void sort() {
         Collections.sort(squadre,new ConfrontaPerPunti());
         for(int i=squadre.size()-1;i>=0;i--){

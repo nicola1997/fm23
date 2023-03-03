@@ -32,6 +32,7 @@ public class Squadra {
         partite=0;
     }
 
+
     public int getPartite() {
         return partite;
     }
