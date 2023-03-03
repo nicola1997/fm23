@@ -9,6 +9,7 @@ public class Squadra {
     private int pareggi;
     private int sconfitte;
     private ArrayList<Calciatore> calciatori;
+    private int valore;
 
 
     public Squadra(String nome) {
@@ -19,6 +20,39 @@ public class Squadra {
             calciatori.add(new Calciatore());
             calciatori.get(i).setSquadra(getNome());
         }
+        for(int i=0;i<calciatori.size();i++){
+            this.valore=valore+getCalciatore(i).getPrezzo();
+        }
+
+    }
+
+    public void aggiungiGiocatore(Calciatore giocatore) {
+        calciatori.add(giocatore);
+    }
+
+    public void rimuoviGiocatore(Calciatore giocatore) {
+        calciatori.remove(giocatore);
+    }
+    public void azzera(){
+        punti=0;
+        vittorie=0;
+        pareggi=0;
+        sconfitte=0;
+        partite=0;
+    }
+
+    public int getValore() {
+        return valore;
+    }
+    public void updateValore() {
+        valore=0;
+        for(int i=0;i<calciatori.size();i++){
+            this.valore=valore+getCalciatore(i).getPrezzo();
+        }
+    }
+
+    public void setValore(int valore) {
+        this.valore = valore;
     }
 
     public ArrayList<Calciatore> getCalciatori() {
@@ -28,15 +62,6 @@ public class Squadra {
     public void setCalciatori(ArrayList<Calciatore> calciatori) {
         this.calciatori = calciatori;
     }
-
-    public void azzera(){
-        punti=0;
-        vittorie=0;
-        pareggi=0;
-        sconfitte=0;
-        partite=0;
-    }
-
 
     public int getPartite() {
         return partite;
@@ -79,14 +104,6 @@ public class Squadra {
     }
     public Calciatore getCalciatore(int i){
         return calciatori.get(i);
-    }
-
-    public void aggiungiGiocatore(Calciatore giocatore) {
-        calciatori.add(giocatore);
-    }
-
-    public void rimuoviGiocatore(Calciatore giocatore) {
-        calciatori.remove(giocatore);
     }
 
     public String getNome() {

@@ -19,11 +19,21 @@ public class Campionato {
         setAnno(getAnno() + 1);
         for (int i = 0; i < getCampionato().size(); i++) {
             getCampionato().get(i).azzera();
+            getCampionato().get(i).updateValore();
+
             for (int j = 0; j < getCampionato().get(i).getCalciatori().size(); j++) {
                 getCampionato().get(i).getCalciatore(j).invecchia();
+                if(getCampionato().get(i).getCalciatore(j).getEta()>40){
+                    System.out.println(getCampionato().get(i).getCalciatore(j).getCognome()+" ritirato! del "+getCampionato().get(i).getCalciatore(j).getSquadra()
+                    +" "+getCampionato().get(i).getCalciatore(j).getSquadra()+" ha "+getCampionato().get(i).getCalciatori().size()+" giocatori\n" );
+                    getCampionato().get(i).rimuoviGiocatore(getCampionato().get(i).getCalciatore(j));
+                    getCampionato().get(i).aggiungiGiocatore(new Calciatore());
+
+
+
+                }
             }
         }
-
     }
 
     ArrayList<Squadra> getSquadre() {

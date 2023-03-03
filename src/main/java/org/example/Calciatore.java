@@ -38,6 +38,7 @@ public class Calciatore {
             setAbilita(getAbilita()-1);
         }
         setPrezzo(1000*abilita-eta*500);
+
         }
 
     public int getIncremento() {
