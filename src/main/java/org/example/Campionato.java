@@ -47,13 +47,6 @@ public class Campionato {
 
     void sort() {
         Collections.sort(squadre,new ConfrontaPerPunti());
-        for(int i=squadre.size()-1;i>=0;i--){
-            System.out.println(squadre.get(i).getPunti()+" "
-            +squadre.get(i).getVittorie()+" "+squadre.get(i).getPareggi()+" "+squadre.get(i).getSconfitte()
-                    +" "+squadre.get(i).getNome());
-
-        }
-
     }
     class ConfrontaPerPunti implements Comparator<Squadra> {
         public int compare(Squadra s1, Squadra s2) {
@@ -100,7 +93,7 @@ public class Campionato {
         a.setPartite(a.getPartite()+1);
         b.setPartite(b.getPartite()+1);
 
-            System.out.println(a.getNome()+"-"+b.getNome()+" "+golA+"-"+golB);
+            //System.out.println(a.getNome()+"-"+b.getNome()+" "+golA+"-"+golB);
 
     }
 

@@ -4,17 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 public class Ui extends JFrame {
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
+    private JButton button1,button2,button3,button4;
     private JPanel panel;
     private JTextArea text5;
 
     Ui(Campionato c) {
-        super("fm");
         setSize(500,500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
