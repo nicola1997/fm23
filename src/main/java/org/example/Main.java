@@ -18,22 +18,22 @@ public class Main {
 
         Scanner s=new Scanner(System.in);
 
-        while(true){
-            System.out.println("1: Classifica\n2: Database\n3: Cerca squadra");
-            String input=s.nextLine();
-            switch (input){
-                case("1"):          c.sort(); break;
-                case("2"):          System.out.println(c.toString()); break;
-                case("3"):          System.out.println("Inserisci una squadra:");
-                                    input=s.nextLine();
+        //while(true){
+        //    System.out.println("1: Classifica\n2: Database\n3: Cerca squadra");
+        //    String input=s.nextLine();
+        //    switch (input){
+        //        case("1"):          c.sort(); break;
+        //        case("2"):          System.out.println(c.toString()); break;
+        //        case("3"):          System.out.println("Inserisci una squadra:");
+                                  //  input=s.nextLine();
                                   // for( i=0;i<c.getSquadre().size();i++ ){
                                   //     if(Objects.equals(c.getSquadre().get(i).getNome(), input)){
                                   //         System.out.println(c.getSquadre().get(i));
                                   //     }
                                   // }
                                   //  break;
-            }
-        }
+         //   }
+       // }
 
     }
 }
