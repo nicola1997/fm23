@@ -11,7 +11,7 @@ public class Main {
         for (int i=0;i<nomiSquadre.length;i++){
             squadreA.add(new Squadra(nomiSquadre[i]));
         }
-        Campionato c= new Campionato("serieA",squadreA);
+        Campionato c= new Campionato("Serie A",squadreA);
 
         Ui ui=new Ui(c);
 

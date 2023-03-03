@@ -7,6 +7,24 @@ import java.util.Random;
 public class Campionato {
     static int anno;
     private final String nome;
+    ArrayList<Squadra> squadre;
+    Random r ;
+    public Campionato(String nome, ArrayList<Squadra> squadre) {
+        this.nome = nome;
+        this.squadre = squadre;
+        this.anno=2023;
+        r= new Random();
+    }
+    void stagioneSuccessiva() {
+        setAnno(getAnno() + 1);
+        for (int i = 0; i < getCampionato().size(); i++) {
+            getCampionato().get(i).azzera();
+            for (int j = 0; j < getCampionato().get(i).getCalciatori().size(); j++) {
+                getCampionato().get(i).getCalciatore(j).invecchia();
+            }
+        }
+
+    }
 
     ArrayList<Squadra> getSquadre() {
         return squadre;
@@ -16,23 +34,7 @@ public class Campionato {
         this.squadre = squadre;
     }
 
-    ArrayList<Squadra> squadre;
-    Random r ;
 
-
-    public Campionato(String nome, ArrayList<Squadra> squadre) {
-        this.nome = nome;
-        this.squadre = squadre;
-        this.anno=2023;
-        r= new Random();
-    }
-    void stagioneSuccessiva(){
-        setAnno(getAnno()+1);
-        for(int i=0;i<getCampionato().size();i++){
-            getCampionato().get(i).azzera();
-            getCampionato().get(i).getCalciatore(i).invecchia();
-        }
-    }
     void sort() {
         Collections.sort(squadre,new ConfrontaPerPunti());
         for(int i=squadre.size()-1;i>=0;i--){
@@ -56,8 +58,8 @@ public class Campionato {
         int golA=0;
         int golB=0;
         while(gol>0){
-            i=r.nextInt(a.getnGiocatori());
-            j=r.nextInt(b.getnGiocatori());
+            i=r.nextInt(a.getCalciatori().size());
+            j=r.nextInt(b.getCalciatori().size());
 
             if(a.getCalciatore(i).getAbilita()>=b.getCalciatore(j).getAbilita()){
                 a.getCalciatore(i).setGol(a.getCalciatore(i).getGol()+1);

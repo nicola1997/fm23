@@ -41,7 +41,9 @@ public class Ui extends JFrame {
                 }
                 else {
                     c.stagioneSuccessiva();
-                    text5.setText("Nuova stagione" + c.anno + " iniziata! Buona fortuna");
+                    text5.setText("Nuova stagione " + c.anno + " iniziata! Buona fortuna");
+                    System.out.println(c.getCampionato().get(0));
+
                 }
             }
         });
@@ -61,11 +63,13 @@ button3.addActionListener(new ActionListener() {
                 }
                 i++;
             }
-            text5.setText("Il campionato si è concluso.\n Controlla la classifica.\n"+c.getCampionato().get(0).getNome()+" e' campione d'Italia");
+            c.sort();
+            text5.setText("Il campionato si è concluso.\nControlla la classifica.\n"+c.getCampionato().get(19).getNome()+" e' campione d'Italia.\n"+
+                    c.getCampionato().get(0).getNome()+" peggior squadra della stagione totalizzando "+c.getCampionato().get(0).getPunti()+" punti.");
 
         }
         else {
-            text5.setText("Inizia una nuova stagione.");
+            text5.setText("Inizia una nuova stagione. Clicca Next.");
         }
     }
 
