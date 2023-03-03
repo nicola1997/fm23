@@ -1,7 +1,6 @@
 package org.example;
 import javax.swing.*;
 import java.util.*;
-
 public class Main {
     public static void main(String[] args) {
         String[] nomiSquadre={"Juventus","Inter","Milan","Napoli","Atalanta","Lazio","Roma","Torino","Bologna","Verona",
@@ -13,6 +12,9 @@ public class Main {
             squadreA.add(new Squadra(nomiSquadre[i]));
         }
         Campionato c= new Campionato("serieA",squadreA);
+
+        Ui ui=new Ui(c);
+
 
         int i=0;
         int j=0;
@@ -45,5 +47,6 @@ public class Main {
                                     break;
             }
         }
+
     }
 }

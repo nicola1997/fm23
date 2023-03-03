@@ -8,7 +8,7 @@ public class Campionato {
     static int anno;
     private final String nome;
 
-    public ArrayList<Squadra> getSquadre() {
+    ArrayList<Squadra> getSquadre() {
         return squadre;
     }
 
