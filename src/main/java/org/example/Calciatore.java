@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Calciatore {
     static final String nomi[]={"Nicola","Vito","Andrea","Aldo","Luca"};
-    static final String cognomi[]={"Neri","Biasco","Guida","Verdi","Rossi","Toldo","Aroli"};
+    static final String cognomi[]={"Neri","Biasco","Guida","Verdi","Rossi","Toldo","Aroli","Apaci"};
     Random r;
     private final String nome;
     private final String cognome;
