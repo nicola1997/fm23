@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Calciatore {
     static final String nomi[]={"Nicola","Vito","Andrea","Aldo","Luca"};
-    static final String cognomi[]={"Neri","Biasco","Guida","Verdi","Rossi"};
+    static final String cognomi[]={"Neri","Biasco","Guida","Verdi","Rossi","Toldo","Aroli"};
     Random r;
     private final String nome;
     private final String cognome;
@@ -18,8 +18,8 @@ public class Calciatore {
 
     public Calciatore() {
         r= new Random();
-        this.nome = nomi[r.nextInt(5)];
-        this.cognome = cognomi[r.nextInt(5)];
+        this.nome = nomi[r.nextInt(nomi.length)];
+        this.cognome = cognomi[r.nextInt(cognomi.length)];
         this.eta = r.nextInt(15,39);
         this.gol = 0;
         this.abilita=r.nextInt(50,99);

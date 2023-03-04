@@ -1,11 +1,9 @@
 package org.example;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
-
 public class Ui extends JFrame {
     private JButton button1,button2,button3,button4;
     private JPanel panel;
