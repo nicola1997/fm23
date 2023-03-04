@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         String[] nomiSquadre={"Juventus","Inter","Milan","Napoli","Atalanta","Lazio","Roma","Torino","Bologna","Verona",
