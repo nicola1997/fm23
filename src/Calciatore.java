@@ -1,8 +1,8 @@
 import java.util.Random;
 
 public class Calciatore {
-    static final String nomi[]={"Nicola","Vito","Andrea","Aldo","Luca"};
-    static final String cognomi[]={"Neri","Biasco","Guida","Verdi","Rossi","Toldo","Aroli","Apaci"};
+    static final String nomi[]={"Nicola","Vito","Andrea","Aldo","Luca","Alessandro","Alessio","Biagio","Carlo","Daniele","Domenico"};
+    static final String cognomi[]={"Neri","Biasco","Guida","Verdi","Rossi","Toldo","Aroli","Apaci","Dipinto","Bianchi","Amato"};
     Random r;
     private final String nome;
     private final String cognome;
@@ -10,8 +10,8 @@ public class Calciatore {
     private int gol;
     private int abilita;
     private String squadra;
-    private final int incremento;
     int prezzo;
+    int incremento;
 
 
     public Calciatore() {
@@ -21,27 +21,36 @@ public class Calciatore {
         this.eta = r.nextInt(15,39);
         this.gol = 0;
         this.abilita=r.nextInt(50,99);
-        this.incremento=r.nextInt(1,3);
-        this.prezzo=1000*abilita-eta*500;
         this.squadra="svincolato";
+        if(eta>14&&eta<22) {
+            incremento=r.nextInt(1,3);
+            setAbilita(getAbilita()+incremento);
+        }
+        if(eta>26) {
+            incremento=r.nextInt(1,3);
+            setAbilita(getAbilita()-r.nextInt(incremento));
+        }
+        this.prezzo=1000*abilita-eta*500;
 
     }
 
     public void invecchia(){
         setEta(getEta()+1);
-        if(eta<25){
-            setAbilita(getAbilita()+getIncremento());
+
+        if(eta>14&&eta<22) {
+            incremento=r.nextInt(1,3);
+            setAbilita(getAbilita()+incremento);
         }
-        else if(eta>30){
-            setAbilita(getAbilita()-1);
+        if(eta>26) {
+            incremento=r.nextInt(1,3);
+            setAbilita(getAbilita()-(incremento));
         }
+
+
         setPrezzo(1000*abilita-eta*500);
 
         }
 
-    public int getIncremento() {
-        return incremento;
-    }
     public int getPrezzo() {
         return prezzo;
     }
@@ -80,15 +89,14 @@ public class Calciatore {
     }
     @Override
     public String toString() {
-        return "\nCalciatore{" +
+        return
+
+                "  \neta=" + eta +
+                " gol=" + gol +
+                " abilita=" + abilita +
+                " prezzo=" + prezzo +
+                " squadra='" + squadra + '\'' +
                 " nome='" + nome + '\'' +
-                ", cognome='" + cognome + '\'' +
-                ", eta=" + eta +
-                ", gol=" + gol +
-                ", abilita=" + abilita +
-                ", squadra='" + squadra + '\'' +
-                ", incremento=" + incremento +
-                ", prezzo=" + prezzo +
-                '}';
+                " cognome='" + cognome + '\'' ;
     }
 }
