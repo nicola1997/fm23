@@ -23,10 +23,12 @@ public class Campionato {
             for (int j = 0; j < getCampionato().get(i).getCalciatori().size(); j++) {
                 getCampionato().get(i).getCalciatore(j).invecchia();
                 if(getCampionato().get(i).getCalciatore(j).getEta()>40){
-                    System.out.println(getCampionato().get(i).getCalciatore(j).getCognome()+" ritirato! del "+getCampionato().get(i).getCalciatore(j).getSquadra()
-                    +" "+getCampionato().get(i).getCalciatore(j).getSquadra()+" ha "+getCampionato().get(i).getCalciatori().size()+" giocatori\n" );
+                    System.out.println(getCampionato().get(i).getCalciatore(j).getCognome()+" ritirato! "+getCampionato().get(i).getCalciatore(j).getSquadra()
+                    +" ha "+getCampionato().get(i).getCalciatori().size()+" giocatori\n" );
                     getCampionato().get(i).rimuoviGiocatore(getCampionato().get(i).getCalciatore(j));
                     getCampionato().get(i).aggiungiGiocatore(new Calciatore());
+                    getCampionato().get(i).getCalciatore(getCampionato().get(i).getCalciatori().size()-1).setSquadra(getCampionato().get(i).getNome());
+
 
 
 

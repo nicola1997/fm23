@@ -8,6 +8,7 @@ public class Ui extends JFrame {
     private JPanel panel;
     private JTextArea text5;
     private Random r;
+    int n=0;
 
     Ui(Campionato c) {
         r=new Random();
@@ -33,7 +34,10 @@ public class Ui extends JFrame {
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                text5.setText(c.getSquadre().get(r.nextInt(19)).toString());
+                text5.setText(c.getSquadre().get(n).toString());
+                n++;
+                if(n>19)
+                    n=0;
             }
         });
         button4.addActionListener(new ActionListener() {
