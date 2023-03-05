@@ -14,7 +14,7 @@ public class Ui extends JFrame {
     ImageIcon imageicon;
 
     Ui(Campionato c) {
-        imageicon=new ImageIcon("C:\\Users\\ndipi\\Desktop\\fm23\\oip.jpg");
+        imageicon=new ImageIcon("oip.jpg");
         label=new JLabel(imageicon);
         r=new Random();
         setSize(800,550);
