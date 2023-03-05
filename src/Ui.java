@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 public class Ui extends JFrame {
-    private JButton button1,button2,button3,button4;
+    private JButton button1,button2,button3,button4,button5;
     private JPanel panel;
     private JTextArea text5;
     private Random r;
@@ -19,17 +19,42 @@ public class Ui extends JFrame {
         JPanel panel = new JPanel(new BorderLayout());
         getContentPane().add(panel);
 
+
         JButton button1 = new JButton("classifica");
         JButton button2 = new JButton("squadre");
         JButton button3 = new JButton("simula");
         JButton button4 = new JButton("Next");
         JTextArea text5 = new JTextArea("Benvenuto. Sei pronto per una nuova sfida? \nVinci la stagione "+c.anno+" con la tua squadra.");
+        JButton button5= new JButton("Start");
 
         panel.add(button1,BorderLayout.EAST);
         panel.add(button2,BorderLayout.NORTH);
-        panel.add(button3,BorderLayout.SOUTH);
         panel.add(button4,BorderLayout.WEST);
         panel.add(text5,BorderLayout.CENTER);
+        panel.add(button5,BorderLayout.SOUTH);
+
+        button1.setVisible(false);
+        button2.setVisible(false);
+        button3.setVisible(false);
+        button4.setVisible(false);
+        text5.setVisible(false);
+        button5.setVisible(true);
+
+
+
+
+        button5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panel.add(button3,BorderLayout.SOUTH);
+                button5.setVisible(false);
+                button1.setVisible(true);
+                button2.setVisible(true);
+                button3.setVisible(true);
+                button4.setVisible(true);
+                text5.setVisible(true);
+            }
+        });
 
         button2.addActionListener(new ActionListener() {
             @Override
