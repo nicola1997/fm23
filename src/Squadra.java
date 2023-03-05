@@ -111,10 +111,10 @@ public class Squadra {
 
     @Override
     public String toString() {
-        return "Squadra{" +
-                "nome='" + nome + '\'' +
-                ", punti=" + punti +
-                ", calciatori=" + calciatori +
+        return "Squadra " +
+                "nome= " + nome + '\'' +
+                " punti=" + punti +
+                " calciatori=" + calciatori +
                 '}';
     }
 }

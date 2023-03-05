@@ -8,11 +8,16 @@ public class Ui extends JFrame {
     private JPanel panel;
     private JTextArea text5;
     private Random r;
-    int n=0;
+
+    static int n=0;
+    JLabel label;
+    ImageIcon imageicon;
 
     Ui(Campionato c) {
+        imageicon=new ImageIcon("C:\\Users\\ndipi\\Desktop\\fm23\\oip.jpg");
+        label=new JLabel(imageicon);
         r=new Random();
-        setSize(500,500);
+        setSize(800,550);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
 
@@ -25,13 +30,14 @@ public class Ui extends JFrame {
         JButton button3 = new JButton("simula");
         JButton button4 = new JButton("Next");
         JTextArea text5 = new JTextArea("Benvenuto. Sei pronto per una nuova sfida? \nVinci la stagione "+c.anno+" con la tua squadra.");
-        JButton button5= new JButton("Start");
+        JButton button5= new JButton("\n\nSTART\n\n");
+        button5.setBackground(Color.ORANGE);
+        button3.setBackground(Color.ORANGE);
+        button4.setBackground(Color.ORANGE);
+        button2.setBackground(Color.ORANGE);
+        button1.setBackground(Color.ORANGE);
 
-        panel.add(button1,BorderLayout.EAST);
-        panel.add(button2,BorderLayout.NORTH);
-        panel.add(button4,BorderLayout.WEST);
-        panel.add(text5,BorderLayout.CENTER);
-        panel.add(button5,BorderLayout.SOUTH);
+        panel.add(button5,BorderLayout.NORTH);
 
         button1.setVisible(false);
         button2.setVisible(false);
@@ -39,14 +45,19 @@ public class Ui extends JFrame {
         button4.setVisible(false);
         text5.setVisible(false);
         button5.setVisible(true);
-
-
+        getContentPane().add(label,BorderLayout.SOUTH);
 
 
         button5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                panel.add(button2,BorderLayout.NORTH);
                 panel.add(button3,BorderLayout.SOUTH);
+                panel.add(button1,BorderLayout.EAST);
+                panel.add(button4,BorderLayout.WEST);
+                panel.add(text5,BorderLayout.CENTER);
+
+                label.setVisible(false);
                 button5.setVisible(false);
                 button1.setVisible(true);
                 button2.setVisible(true);
